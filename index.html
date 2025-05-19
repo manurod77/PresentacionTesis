@@ -1,0 +1,1277 @@
+
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const Presentacion = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
+  };
+
+  const slides = [
+    // Portada
+    <div className="flex flex-col items-center justify-center h-full text-center p-6">
+      <h1 className="text-4xl font-bold mb-4 text-indigo-700">INNOVACIÓN TECNOLÓGICA DE CENTRO CULTURAL</h1>
+      <h2 className="text-3xl font-bold mb-6 text-indigo-600">EN EL DISTRITO DE BARRANCO CON ECOSISTEMA DE RECURSOS XR</h2>
+      <div className="w-24 h-1 bg-indigo-500 mb-6"></div>
+      <p className="text-lg mb-2">Tesina para obtener el Grado de Bachiller en Artes Visuales</p>
+      <div className="my-8 p-4 border-l-4 border-indigo-500">
+        <p className="text-xl"><span className="font-bold">AUTOR:</span> DE LA BARRA CHÁVEZ, MANUEL RODRIGO</p>
+        <p className="text-xl"><span className="font-bold">ASESOR:</span> ACEVEDO SÁNCHEZ, DIEGO ARMANDO</p>
+      </div>
+      <div className="mt-4 flex items-center justify-center">
+        <div className="px-4 py-2 bg-indigo-100 rounded-full">
+          <p className="text-indigo-800">Corriente Alterna - Escuela de Arte y Creatividad</p>
+          <p className="text-indigo-800">Lima, Perú - 2025</p>
+        </div>
+      </div>
+    </div>,
+
+    // Estructura
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-6 text-indigo-700">ESTRUCTURA DE LA PRESENTACIÓN</h2>
+      <div className="flex-grow flex">
+        <div className="w-1/2 pr-8">
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">1</div>
+            <p className="text-xl">Introducción y Motivación</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">2</div>
+            <p className="text-xl">Acerca de Bulbo XR</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">3</div>
+            <p className="text-xl">Contexto y Problemática</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">4</div>
+            <p className="text-xl">Objetivos e Hipótesis</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">5</div>
+            <p className="text-xl">Marco Metodológico</p>
+          </div>
+        </div>
+        <div className="w-1/2 pl-8 border-l border-gray-300">
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">6</div>
+            <p className="text-xl">Análisis y Hallazgos</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">7</div>
+            <p className="text-xl">Propuesta: BulboXR</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">8</div>
+            <p className="text-xl">Prototipos y Validación</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">9</div>
+            <p className="text-xl">Conclusiones y Proyecciones</p>
+          </div>
+          <div className="flex items-center mb-4">
+            <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold mr-3">10</div>
+            <p className="text-xl">Aspectos Destacados</p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-indigo-50 rounded-lg p-4 mt-4 shadow-sm">
+        <p className="text-indigo-800 italic text-center">
+          "Un viaje por la transformación digital del patrimonio cultural de Barranco"
+        </p>
+      </div>
+    </div>,
+
+    // Introducción
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-4 text-indigo-700">1. INTRODUCCIÓN Y MOTIVACIÓN</h2>
+      
+      <div className="bg-indigo-50 rounded-lg p-4 my-4 shadow-sm">
+        <p className="text-indigo-800 italic text-lg">
+          "La XR no solo transforma el arte en términos estéticos, sino que plantea un reto sobre quién puede acceder a estas experiencias"
+        </p>
+      </div>
+      
+      <h3 className="text-xl font-bold mb-3 text-indigo-600">¿Por qué Barranco y por qué XR?</h3>
+      
+      <div className="flex-grow flex mt-4">
+        <div className="w-1/2 pr-6">
+          <div className="bg-white rounded-lg shadow-md p-4 mb-4">
+            <h4 className="font-bold text-lg mb-2 text-indigo-700">Barranco</h4>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Distrito emblemático de Lima</li>
+              <li>Rica tradición cultural e histórica</li>
+              <li>Patrimonio en riesgo por gentrificación</li>
+              <li>Potencial para turismo cultural</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="w-1/2 pl-6">
+          <div className="bg-white rounded-lg shadow-md p-4">
+            <h4 className="font-bold text-lg mb-2 text-indigo-700">XR (Realidad Extendida)</h4>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Realidad Virtual (VR): entornos completamente digitales</li>
+              <li>Realidad Aumentada (AR): información digital sobre el mundo real</li>
+              <li>Realidad Mixta (MR): interacción entre elementos físicos y digitales</li>
+              <li>Audio inmersivo: experiencias sonoras envolventes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>,
+    
+    // Sobre Bulbo XR
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-4 text-indigo-700">ACERCA DE BULBO XR</h2>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 h-full flex flex-col">
+        <div className="bg-indigo-50 rounded-lg p-4 mb-6 shadow-sm">
+          <p className="text-indigo-800 font-medium text-lg text-center">
+            "Un proyecto cultural innovador que integra las tecnologías de realidad extendida (XR) en el ámbito artístico y patrimonial de Lima"
+          </p>
+        </div>
+        
+        <div className="flex-grow flex">
+          <div className="w-3/4 pr-4 flex flex-col space-y-4">
+            <p className="text-lg">
+              <span className="font-bold text-indigo-700">Bulbo XR</span> es un proyecto cultural innovador que se desarrollará en el distrito de Barranco, con el objetivo de integrar las tecnologías de realidad extendida (XR) en el ámbito artístico y patrimonial de Lima. Esta iniciativa busca llenar un vacío en la ciudad, donde la aplicación de tecnologías digitales en la cultura sigue siendo limitada, a pesar de su creciente accesibilidad y el potencial que ofrecen.
+            </p>
+            
+            <p className="text-lg">
+              El proyecto propone la creación de un centro de arte y tecnología que sirva como espacio para la creación, exhibición y mediación de obras que emplean realidad aumentada (AR), realidad virtual (VR) y otras herramientas digitales. Su enfoque no es la simple utilización de estas tecnologías, sino su integración crítica y contextualizada con las prácticas artísticas contemporáneas, el patrimonio local y las dinámicas culturales del distrito de Barranco.
+            </p>
+            
+            <p className="text-lg">
+              A través de <span className="font-bold text-indigo-700">Bulbo XR</span>, se busca ofrecer una plataforma para artistas, creadores y colectivos locales que deseen explorar y expandir sus propuestas artísticas mediante el uso de tecnologías de realidad expandida (XR). Además, el centro ofrecerá talleres y actividades formativas para el público en general, con el fin de promover el conocimiento y la apreciación de estas herramientas en el arte y la cultura.
+            </p>
+            
+            <p className="text-lg">
+              El proyecto aspira a ser un punto de encuentro entre arte, tecnología y comunidad, creando un espacio donde la digitalización no sea solo un recurso, sino una forma de repensar y expandir la experiencia cultural en la actualidad.
+            </p>
+          </div>
+          
+          <div className="w-1/4 flex flex-col items-center justify-center">
+            <div className="bg-white p-2 border-2 border-indigo-200 rounded-md shadow-md">
+              {/* Usando un servicio generador de QR en línea con la URL específica */}
+              <img 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://raw.githubusercontent.com/manurod77/AppBulboXR/refs/heads/main/pitch.png" 
+                alt="Código QR de Bulbo XR" 
+                className="w-48 h-48" 
+              />
+              <p className="text-center text-sm mt-2 text-indigo-700 font-medium">Escanea para más información</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>,
+
+    // Contexto
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-6 text-indigo-700">3. CONTEXTO Y PROBLEMÁTICA</h2>
+      
+      <div className="flex-grow flex">
+        <div className="w-1/2 pr-6">
+          <h3 className="text-xl font-bold mb-4 text-indigo-600">Desafíos del patrimonio cultural en Barranco:</h3>
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+              </div>
+              <p className="text-lg">Accesibilidad limitada al patrimonio histórico</p>
+            </div>
+            <div className="flex items-start">
+              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+              </div>
+              <p className="text-lg">Amenaza de la identidad histórica por gentrificación</p>
+            </div>
+            <div className="flex items-start">
+              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+              </div>
+              <p className="text-lg">Experiencias culturales tradicionales poco atractivas para nuevas generaciones</p>
+            </div>
+            <div className="flex items-start">
+              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+              </div>
+              <p className="text-lg">Brecha entre innovación digital y espacios culturales tradicionales</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="w-1/2 pl-6 flex flex-col">
+          <h3 className="text-xl font-bold mb-4 text-indigo-600">Conexión con legados arquitectónicos:</h3>
+          
+          <div className="bg-white rounded-lg p-5 shadow-md mb-4">
+            <p className="text-lg">Este proyecto busca llenar un vacío en Lima, donde la aplicación de tecnologías digitales en la cultura sigue siendo limitada, a pesar de su creciente accesibilidad y potencial</p>
+          </div>
+          
+          <div className="bg-indigo-50 rounded-lg p-5 shadow-md flex-grow flex items-center justify-center">
+            <p className="text-xl text-center text-indigo-800 italic">
+              "La XR ha demostrado ser una herramienta poderosa en la conservación digital del patrimonio y en la creación de experiencias inmersivas"
+            </p>
+          </div>
+          
+          <div className="mt-6 bg-green-50 rounded-lg p-4 shadow-sm">
+            <h4 className="font-bold text-green-800 mb-2">Casos de éxito internacionales:</h4>
+            <ul className="list-disc pl-5 text-green-700">
+              <li>Museo Sorolla AR (España): reconstrucción de artista como guía virtual</li>
+              <li>VR Pompeii & VR Acropolis: recreación de monumentos históricos</li>
+              <li>El jardín de las delicias (Museo del Prado): experiencia VR interactiva</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>,
+
+    // Objetivos
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-6 text-indigo-700">4. OBJETIVOS E HIPÓTESIS</h2>
+      
+      <div className="flex-grow flex">
+        <div className="w-1/2 pr-6">
+          <div className="bg-indigo-50 rounded-lg p-5 shadow-md mb-6">
+            <h3 className="text-xl font-bold mb-3 text-indigo-700">Objetivo general:</h3>
+            <p className="text-lg">
+              Explorar y diseñar soluciones XR que potencien la oferta cultural del Centro Cultural Casa Bulbo de Barranco, fomentando el turismo y la preservación del patrimonio.
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md p-5">
+            <h3 className="text-xl font-bold mb-3 text-indigo-700">Objetivos específicos:</h3>
+            <ul className="space-y-3">
+              <li className="flex items-center">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">1</div>
+                <p className="text-lg">Implementar una aplicación-plataforma para los proyectos de BulboXR</p>
+              </li>
+              <li className="flex items-center">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">2</div>
+                <p className="text-lg">Crear recorridos XR interactivos geolocalizados en puntos icónicos</p>
+              </li>
+              <li className="flex items-center">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">3</div>
+                <p className="text-lg">Comprobar la efectividad de los medios XR en la percepción de los visitantes</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="w-1/2 pl-6">
+          <div className="bg-indigo-50 rounded-lg p-5 shadow-md mb-6">
+            <h3 className="text-xl font-bold mb-3 text-indigo-700">Hipótesis general:</h3>
+            <p className="text-lg">
+              La implementación de XR en espacios culturales mejora la interacción, la accesibilidad y la preservación del patrimonio en centros históricos.
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md p-5">
+            <h3 className="text-xl font-bold mb-3 text-indigo-700">Hipótesis específicas:</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 mt-1 flex-shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-lg">La XR aumenta la participación y retención de información de los visitantes.</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 mt-1 flex-shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-lg">Las experiencias inmersivas pueden fortalecer el turismo cultural y la apreciación del patrimonio local.</p>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="mt-6 bg-yellow-50 rounded-lg p-4 shadow-sm">
+            <h4 className="font-bold text-yellow-800 mb-2">Alcance y limitaciones:</h4>
+            <ul className="list-disc pl-5 text-yellow-700">
+              <li>Implementación en puntos estratégicos de Barranco</li>
+              <li>Accesible desde dispositivos móviles comunes</li>
+              <li>Requiere financiamiento y capacitación para garantizar inclusión digital</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>,
+
+    // Metodología
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-6 text-indigo-700">5. MARCO METODOLÓGICO</h2>
+      
+      <div className="flex-grow flex">
+        <div className="w-1/2 pr-6">
+          <div className="bg-purple-50 rounded-lg p-5 shadow-md mb-6">
+            <h3 className="text-xl font-bold mb-3 text-purple-700">Enfoque mixto:</h3>
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-lg font-semibold text-purple-700">Métodos cualitativos</p>
+                <p className="text-sm text-purple-600">Entrevistas a expertos XR y gestores culturales</p>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-lg font-semibold text-purple-700">Métodos cuantitativos</p>
+                <p className="text-sm text-purple-600">Encuestas a usuarios y análisis de métricas de uso</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md p-5">
+            <h3 className="text-xl font-bold mb-3 text-purple-700">Recolección de datos:</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-purple-500 mr-2 flex-shrink-0"></div>
+                <p>Entrevistas a expertos de LabXR-PUCP</p>
+              </li>
+              <li className="flex items-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-purple-500 mr-2 flex-shrink-0"></div>
+                <p>Encuestas online (100 personas)</p>
+              </li>
+              <li className="flex items-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-purple-500 mr-2 flex-shrink-0"></div>
+                <p>Benchmarking de experiencias XR internacionales</p>
+              </li>
+              <li className="flex items-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-purple-500 mr-2 flex-shrink-0"></div>
+                <p>Pruebas de usuario con prototipos</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="w-1/2 pl-6">
+          <h3 className="text-xl font-bold mb-4 text-purple-700">Herramientas metodológicas:</h3>
+          
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+              <h4 className="font-bold mb-1 text-purple-700">Design Thinking</h4>
+              <p className="text-sm">Para análisis de necesidades, ideación y prototipado de experiencias</p>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+                </svg>
+              </div>
+              <h4 className="font-bold mb-1 text-purple-700">Journey Maps</h4>
+              <p className="text-sm">De visitantes, artistas y navegación espacial intuitiva</p>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h4 className="font-bold mb-1 text-purple-700">Análisis Arquitectónico</h4>
+              <p className="text-sm">Para integración de tecnología XR con valor patrimonial</p>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h4 className="font-bold mb-1 text-purple-700">Validación Participativa</h4>
+              <p className="text-sm">Con residentes, artistas y gestores culturales locales</p>
+            </div>
+          </div>
+          
+          <div className="mt-6 bg-purple-50 rounded-lg p-4 shadow-sm">
+            <h4 className="font-bold text-purple-800 mb-2">Arquetipos definidos:</h4>
+            <ul className="space-y-1 text-purple-700">
+              <li className="flex items-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-purple-500 mr-2 flex-shrink-0"></div>
+                <p>El Artista Digital Inmersivo (25-40 años)</p>
+              </li>
+              <li className="flex items-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-purple-500 mr-2 flex-shrink-0"></div>
+                <p>El Explorador Cultural Tecnológico (18-50 años)</p>
+              </li>
+              <li className="flex items-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-purple-500 mr-2 flex-shrink-0"></div>
+                <p>El Emprendedor XR & Educador (30-55 años)</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>,
+
+    // Análisis
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-6 text-indigo-700">6. ANÁLISIS Y HALLAZGOS</h2>
+      
+      <div className="flex-grow flex">
+        <div className="w-1/2 pr-6">
+          <h3 className="text-xl font-bold mb-4 text-indigo-600">Tendencias clave en XR cultural:</h3>
+          
+          <div className="space-y-3">
+            <div className="bg-white rounded-lg shadow-sm p-3 flex items-center">
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-semibold">Recorridos virtuales y visitas inmersivas</p>
+                <p className="text-sm text-gray-600">Exploración virtual de espacios culturales</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-sm p-3 flex items-center">
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-semibold">Reconstrucción digital del patrimonio</p>
+                <p className="text-sm text-gray-600">Preservación y documentación digital</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-sm p-3 flex items-center">
+              <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                  <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-semibold">Interactividad y gamificación</p>
+                <p className="text-sm text-gray-600">Experiencias lúdicas para engagement</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-sm p-3 flex items-center">
+              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-semibold">Narrativa digital y storytelling</p>
+                <p className="text-sm text-gray-600">Relatos inmersivos y personajes virtuales</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-sm p-3 flex items-center">
+              <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-3 flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-semibold">Experiencias multisensoriales</p>
+                <p className="text-sm text-gray-600">Entornos que estimulan múltiples sentidos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="w-1/2 pl-6">
+          <h3 className="text-xl font-bold mb-4 text-indigo-600">Insights de las encuestas:</h3>
+          
+          <div className="bg-white rounded-lg shadow-md p-5 mb-4">
+            <h4 className="font-bold text-lg mb-3">Tecnologías XR más utilizadas</h4>
+            <div className="space-y-3">
+              <div className="flex items-center">
+                <div className="w-32 text-sm">Realidad Virtual</div>
+                <div className="flex-grow bg-gray-200 rounded-full h-4">
+                  <div className="bg-indigo-600 h-4 rounded-full" style={{width: '72.2%'}}></div>
+                </div>
+                <div className="w-16 text-right text-sm font-bold">72.2%</div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-32 text-sm">Realidad Aumentada</div>
+                <div className="flex-grow bg-gray-200 rounded-full h-4">
+                  <div className="bg-indigo-600 h-4 rounded-full" style={{width: '56.7%'}}></div>
+                </div>
+                <div className="w-16 text-right text-sm font-bold">56.7%</div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-32 text-sm">Video 360°</div>
+                <div className="flex-grow bg-gray-200 rounded-full h-4">
+                  <div className="bg-indigo-600 h-4 rounded-full" style={{width: '45.6%'}}></div>
+                </div>
+                <div className="w-16 text-right text-sm font-bold">45.6%</div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-32 text-sm">Realidad Mixta</div>
+                <div className="flex-grow bg-gray-200 rounded-full h-4">
+                  <div className="bg-indigo-600 h-4 rounded-full" style={{width: '30%'}}></div>
+                </div>
+                <div className="w-16 text-right text-sm font-bold">30%</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md p-5">
+            <h4 className="font-bold text-lg mb-3">Sectores con mayor adopción</h4>
+            <div className="space-y-3">
+              <div className="flex items-center">
+                <div className="w-32 text-sm">Educación</div>
+                <div className="flex-grow bg-gray-200 rounded-full h-4">
+                  <div className="bg-green-600 h-4 rounded-full" style={{width: '54.4%'}}></div>
+                </div>
+                <div className="w-16 text-right text-sm font-bold">54.4%</div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-32 text-sm">Tecnología</div>
+                <div className="flex-grow bg-gray-200 rounded-full h-4">
+                  <div className="bg-green-600 h-4 rounded-full" style={{width: '40%'}}></div>
+                </div>
+                <div className="w-16 text-right text-sm font-bold">40%</div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-32 text-sm">Cultura/Arte</div>
+                <div className="flex-grow bg-gray-200 rounded-full h-4">
+                  <div className="bg-green-600 h-4 rounded-full" style={{width: '30%'}}></div>
+                </div>
+                <div className="w-16 text-right text-sm font-bold">30%</div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-32 text-sm">Entretenimiento</div>
+                <div className="flex-grow bg-gray-200 rounded-full h-4">
+                  <div className="bg-green-600 h-4 rounded-full" style={{width: '27.8%'}}></div>
+                </div>
+                <div className="w-16 text-right text-sm font-bold">27.8%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>,
+
+    // Propuesta
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-4 text-indigo-700">7. PROPUESTA: BULBOXR</h2>
+      
+      <div className="bg-indigo-50 rounded-lg p-4 my-3 shadow-sm">
+        <p className="text-indigo-800 italic text-lg text-center">
+          "Barranco XR: Un Viaje Sensorial por el Pasado, Presente y Futuro"
+        </p>
+      </div>
+      
+      <div className="flex-grow flex mt-2">
+        <div className="w-1/3 px-2">
+          <div className="bg-blue-50 rounded-lg shadow-md p-4 h-full flex flex-col">
+            <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mx-auto mb-4">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-2 text-blue-700 text-center">1. Exploración Urbana XR</h3>
+            <p className="text-sm mb-3 text-center font-bold text-blue-700">"Barranco Vive"</p>
+            
+            <ul className="space-y-2 mt-2 flex-grow">
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Recorrido con AR/MR por calles del distrito</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Capas digitales sobre edificios históricos y murales</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Gamificación y desafíos creativos</p>
+              </li>
+            </ul>
+            
+            <p className="text-sm italic text-gray-600 mt-4">Ideal para: Exploradores culturales, turistas y artistas urbanos</p>
+          </div>
+        </div>
+        
+        <div className="w-1/3 px-2">
+          <div className="bg-purple-50 rounded-lg shadow-md p-4 h-full flex flex-col">
+            <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mx-auto mb-4">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-2 text-purple-700 text-center">2. Galería Interactiva</h3>
+            <p className="text-sm mb-3 text-center font-bold text-purple-700">"Espacio de Co-creación XR"</p>
+            
+            <ul className="space-y-2 mt-2 flex-grow">
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Exhibición de obras digitales en 3D, VR y AR</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Espacios con captura volumétrica y hologramas</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Zona con Unreal Engine, Unity, motores WebXR y herramientas XR para artistas</p>
+              </li>
+            </ul>
+            
+            <p className="text-sm italic text-gray-600 mt-4">Ideal para: Artistas digitales, diseñadores XR y emprendedores</p>
+          </div>
+        </div>
+        
+        <div className="w-1/3 px-2">
+          <div className="bg-green-50 rounded-lg shadow-md p-4 h-full flex flex-col">
+            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-600 mx-auto mb-4">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-2 text-green-700 text-center">3. Simulación Inmersiva</h3>
+            <p className="text-sm mb-3 text-center font-bold text-green-700">"Espacios XR"</p>
+            
+            <ul className="space-y-2 mt-2 flex-grow">
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Viaje VR por el Barranco histórico, presente y futuro</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Laboratorio de Realidad Virtual educativo</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-2 mt-0.5 flex-shrink-0">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-sm">Escenario híbrido para performance y teatro XR</p>
+              </li>
+            </ul>
+            
+            <p className="text-sm italic text-gray-600 mt-4">Ideal para: Educadores, investigadores y amantes de la historia</p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-4 mt-4">
+        <h3 className="text-lg font-bold mb-2 text-indigo-700">Valor diferencial de BulboXR:</h3>
+        <ul className="grid grid-cols-3 gap-2">
+          <li className="flex items-center">
+            <div className="w-3 h-3 rounded-full bg-indigo-500 mr-2 flex-shrink-0"></div>
+            <p className="text-sm">Integridad del ecosistema XR</p>
+          </li>
+          <li className="flex items-center">
+            <div className="w-3 h-3 rounded-full bg-indigo-500 mr-2 flex-shrink-0"></div>
+            <p className="text-sm">Enfoque en preservación patrimonial</p>
+          </li>
+          <li className="flex items-center">
+            <div className="w-3 h-3 rounded-full bg-indigo-500 mr-2 flex-shrink-0"></div>
+            <p className="text-sm">Accesibilidad desde dispositivos móviles</p>
+          </li>
+          <li className="flex items-center">
+            <div className="w-3 h-3 rounded-full bg-indigo-500 mr-2 flex-shrink-0"></div>
+            <p className="text-sm">Creación colectiva y participación</p>
+          </li>
+          <li className="flex items-center">
+            <div className="w-3 h-3 rounded-full bg-indigo-500 mr-2 flex-shrink-0"></div>
+            <p className="text-sm">Promoción del turismo cultural</p>
+          </li>
+          <li className="flex items-center">
+            <div className="w-3 h-3 rounded-full bg-indigo-500 mr-2 flex-shrink-0"></div>
+            <p className="text-sm">Modelo potencialmente replicable</p>
+          </li>
+        </ul>
+      </div>
+    </div>,
+
+    // Prototipos
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-4 text-indigo-700">8. PROTOTIPOS Y VALIDACIÓN</h2>
+      
+      <div className="flex-grow flex">
+        <div className="w-3/5 pr-4">
+          <div className="grid grid-cols-2 gap-4 h-full">
+            <div className="bg-white rounded-lg shadow-md p-4 flex flex-col">
+              <div className="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mx-auto mb-3">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-center mb-2">Prototipo 1:</h3>
+              <h4 className="font-bold text-yellow-700 text-center mb-3">Recorrido XR Geolocalizado</h4>
+              
+              <ul className="space-y-2 text-sm flex-grow">
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>App móvil/WebXR para visitas a puntos clave de Barranco</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Herramientas: Zappar, 8thWall, Unity + Vuforia, y motores online para WebXR</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Usuarios: Turistas, residentes, gestores culturales</p>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4 flex flex-col">
+              <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mx-auto mb-3">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-center mb-2">Prototipo 2:</h3>
+              <h4 className="font-bold text-blue-700 text-center mb-3">Exposición de Arte en AR</h4>
+              
+              <ul className="space-y-2 text-sm flex-grow">
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Obras digitales superpuestas al espacio físico</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Activación vía QR o marcadores físicos</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Usuarios: Visitantes del centro cultural, artistas digitales</p>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4 flex flex-col">
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-600 mx-auto mb-3">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+              </div>
+              <h3 className="font-bold text-center mb-2">Prototipo 3:</h3>
+              <h4 className="font-bold text-green-700 text-center mb-3">Instalación VR/MR inmersiva</h4>
+              
+              <ul className="space-y-2 text-sm flex-grow">
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Experiencia VR artística basada en la historia del distrito</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Herramientas: Unreal Engine/Unity + motores online para WebXR + Blender/Houdini</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Usuarios: Visitantes del centro cultural</p>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4 col-span-1">
+              <h3 className="font-bold text-center text-indigo-700 mb-3">Resultados esperados:</h3>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Facilitar el acceso a arte digital sin requerir infraestructura física costosa</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Evaluar la conexión emocional con el contenido en entornos aumentados</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-2 mt-0.5 flex-shrink-0">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <p>Validar usabilidad del sistema y su potencial educativo</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div className="w-2/5 pl-4">
+          <div className="bg-indigo-50 rounded-lg shadow-md p-4 h-full">
+            <h3 className="font-bold text-xl text-center text-indigo-700 mb-4">Plan de Implementación Progresiva</h3>
+            
+            <div className="space-y-3">
+              <div className="bg-white rounded p-3 shadow-sm flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">1</div>
+                <div>
+                  <h4 className="font-bold text-indigo-700">Integración de sistema de postcard</h4>
+                  <p className="text-sm">Implementar escaneo de códigos QR y reconocimiento de imágenes</p>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded p-3 shadow-sm flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">2</div>
+                <div>
+                  <h4 className="font-bold text-indigo-700">Experiencia de Galería MR</h4>
+                  <p className="text-sm">Adaptar el código para soportar múltiples obras y sistema de carrusel</p>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded p-3 shadow-sm flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">3</div>
+                <div>
+                  <h4 className="font-bold text-indigo-700">AR Geolocalizada en Barranco</h4>
+                  <p className="text-sm">Base de datos de POIs con coordenadas e indicadores de dirección</p>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded p-3 shadow-sm flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">4</div>
+                <div>
+                  <h4 className="font-bold text-indigo-700">Experiencia Inmersiva VR</h4>
+                  <p className="text-sm">Entorno 3D completo con controles de navegación e interacción</p>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded p-3 shadow-sm flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">5</div>
+                <div>
+                  <h4 className="font-bold text-indigo-700">Optimización y accesibilidad</h4>
+                  <p className="text-sm">Soporte multi-idioma y mejoras para diversos dispositivos</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-4 bg-indigo-100 rounded p-3 text-sm text-center text-indigo-700 italic">
+              Enfoque incremental que permite lanzar versiones funcionales mientras se continúa el desarrollo, obteniendo feedback de usuarios reales
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>,
+
+    // Conclusiones
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-4 text-indigo-700">9. CONCLUSIONES Y PROYECCIONES</h2>
+      
+      <div className="flex-grow flex">
+        <div className="w-1/2 pr-6">
+          <div className="bg-indigo-50 rounded-lg shadow-md p-5 mb-6">
+            <h3 className="text-xl font-bold mb-3 text-indigo-700">Conclusiones:</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 mt-1 flex-shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-lg">La XR representa una oportunidad clave para fortalecer la oferta cultural del Centro Cultural Casa Bulbo</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 mt-1 flex-shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-lg">Permite un acceso más dinámico e inclusivo al patrimonio cultural de Barranco</p>
+              </li>
+              <li className="flex items-start">
+                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 mt-1 flex-shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <p className="text-lg">La XR no solo transforma el arte en términos estéticos, sino que continúa la tradición modernista de renovación arquitectónica y cultural</p>
+              </li>
+            </ul>
+            
+            <div className="mt-4 p-3 bg-red-50 rounded-lg">
+              <p className="text-red-700 font-bold">Desafío principal:</p>
+              <p className="text-red-700">Garantizar que la XR sea una herramienta democrática y accesible, manteniendo la autenticidad del patrimonio arquitectónico de Barranco</p>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md p-5">
+            <h3 className="text-xl font-bold mb-3 text-indigo-700">Impacto proyectado:</h3>
+            
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-green-50 rounded p-3">
+                <h4 className="font-bold text-green-700 mb-1">Cultural</h4>
+                <p className="text-sm">Revitalización del patrimonio histórico y artístico de Barranco</p>
+              </div>
+              
+              <div className="bg-blue-50 rounded p-3">
+                <h4 className="font-bold text-blue-700 mb-1">Arquitectónico</h4>
+                <p className="text-sm">Diálogo entre estética modernista y tecnologías contemporáneas</p>
+              </div>
+              
+              <div className="bg-purple-50 rounded p-3">
+                <h4 className="font-bold text-purple-700 mb-1">Artístico</h4>
+                <p className="text-sm">Nuevas posibilidades expresivas para creadores locales</p>
+              </div>
+              
+              <div className="bg-yellow-50 rounded p-3">
+                <h4 className="font-bold text-yellow-700 mb-1">Educativo</h4>
+                <p className="text-sm">Aprendizaje inmersivo sobre la historia urbana y cultural</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="w-1/2 pl-6">
+          <div className="bg-indigo-50 rounded-lg shadow-md p-5">
+            <h3 className="text-xl font-bold mb-3 text-indigo-700">Recomendaciones:</h3>
+            
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-bold text-indigo-700">Creación de comunidad artístico-tecnológica</p>
+                  <p className="text-sm">Fomentando la colaboración entre artistas digitales, diseñadores y tecnólogos</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-bold text-indigo-700">Documentación y divulgación</p>
+                  <p className="text-sm">Publicación de manifiestos y textos teóricos sobre XR y patrimonio</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-bold text-indigo-700">Instalaciones XR en espacios públicos</p>
+                  <p className="text-sm">Para democratizar el acceso sin necesidad de dispositivos personales</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-3 flex-shrink-0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-bold text-indigo-700">Estrategias de financiamiento diversificadas</p>
+                  <p className="text-sm">Mediante fondos de innovación, patrocinadores y modelos de ingresos sostenibles</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-6 bg-indigo-100 rounded-lg p-4 text-indigo-800">
+              <h4 className="font-bold mb-2">Integración cultural y tecnológica:</h4>
+              <p>Este proyecto integra la expresión artística con la funcionalidad social y urbana. Las tecnologías XR representan un nuevo lenguaje para promover la innovación en el contexto contemporáneo, potenciando la oferta cultural y patrimonial de Barranco.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>,
+
+    // Aspectos destacados
+    <div className="flex flex-col h-full p-6">
+      <h2 className="text-3xl font-bold mb-6 text-indigo-700">10. ASPECTOS DESTACADOS</h2>
+      
+      <div className="flex-grow flex">
+        <div className="w-1/2 pr-4">
+          <h3 className="text-xl font-bold mb-4 text-indigo-600">Valor diferencial del proyecto:</h3>
+          
+          <div className="space-y-4">
+            <div className="bg-white rounded-lg shadow-md p-4 flex items-start">
+              <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-4 flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+                  <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-red-700 mb-1">Innovación cultural</h4>
+                <p className="text-sm">Primer centro cultural en Lima con ecosistema XR integral que combina recorridos urbanos, galería interactiva y experiencias inmersivas</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4 flex items-start">
+              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4 flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-blue-700 mb-1">Impacto social</h4>
+                <p className="text-sm">Democratización del patrimonio cultural para nuevos públicos, especialmente jóvenes y comunidades con acceso limitado a espacios culturales tradicionales</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4 flex items-start">
+              <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-green-700 mb-1">Modelo replicable</h4>
+                <p className="text-sm">Estrategia aplicable a otros distritos históricos de Lima y adaptable a diferentes contextos culturales en Perú</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="w-1/2 pl-4">
+          <div className="space-y-4">
+            <div className="bg-white rounded-lg shadow-md p-4 flex items-start">
+              <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-4 flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-yellow-700 mb-1">Sostenibilidad</h4>
+                <p className="text-sm">Business Model Canvas con fuentes de ingresos diversificadas, incluyendo experiencias premium, talleres, espacios para artistas y alianzas con el sector turístico</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-4 flex items-start">
+              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4 flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                  <path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-purple-700 mb-1">Interdisciplinariedad</h4>
+                <p className="text-sm">Convergencia entre arte, tecnología, patrimonio, educación y turismo en un único ecosistema integrado</p>
+              </div>
+            </div>
+            
+            <div className="bg-indigo-50 rounded-lg shadow-md p-5 mt-4">
+              <h3 className="text-lg font-bold mb-3 text-indigo-700 text-center">Siguientes pasos:</h3>
+              
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-2 flex-shrink-0">1</div>
+                  <p>Presentación del proyecto a entidades culturales y tecnológicas</p>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-2 flex-shrink-0">2</div>
+                  <p>Postulación a fondos de capital semilla (ProInnóvate, MINCUL)</p>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-2 flex-shrink-0">3</div>
+                  <p>Implementación de primer prototipo funcional en Barranco</p>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-2 flex-shrink-0">4</div>
+                  <p>Convocatoria a artistas locales para primera exhibición XR</p>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-2 flex-shrink-0">5</div>
+                  <p>Expansión gradual a otros puntos culturales de Lima</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>,
+
+    // Gracias - Diapositiva final
+    <div className="flex flex-col h-full p-6 bg-gradient-to-br from-indigo-50 to-indigo-100">
+      <div className="flex-grow flex flex-col items-center justify-center text-center">
+        <h2 className="text-5xl font-bold mb-8 text-indigo-700">GRACIAS</h2>
+        
+        <div className="w-24 h-1 bg-indigo-500 mb-8"></div>
+        
+        <div className="mb-8">
+          <p className="text-2xl font-bold text-indigo-800">Manuel Rodrigo De La Barra Chávez</p>
+          <p className="text-xl text-indigo-600">Bachiller en Arquitectura y Artista Contemporáneo</p>
+        </div>
+        
+        <div className="bg-white rounded-lg shadow-md p-6 max-w-md">
+          <p className="text-lg mb-4">
+            "La tecnología XR no solo nos permite ver el patrimonio cultural de nuevas formas, sino que democratiza su acceso y preserva su legado para las futuras generaciones"
+          </p>
+          
+          <div className="mt-4">
+            <p className="text-indigo-700">Corriente Alterna - Escuela de Arte y Creatividad</p>
+            <p className="text-indigo-700">Lima, Perú</p>
+            <p className="text-indigo-700">2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  ];
+
+  return (
+    <div className="flex flex-col h-full bg-gray-100">
+      {/* Header */}
+      <div className="bg-white shadow-md p-4 flex justify-between items-center">
+        <div className="text-xl text-indigo-800 font-bold">Presentación de Tesis: BulboXR</div>
+        <div className="flex items-center space-x-2 text-gray-600">
+          <span>Diapositiva {currentSlide + 1} de {slides.length}</span>
+        </div>
+      </div>
+      
+      {/* Main content area */}
+      <div className="flex-grow flex">
+        {/* Slide navigation - left side */}
+        <div className="w-14 flex items-center justify-center">
+          <button 
+            onClick={prevSlide}
+            className={`w-10 h-10 rounded-full flex items-center justify-center ${currentSlide > 0 ? 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200' : 'bg-gray-100 text-gray-400 cursor-not-allowed'}`}
+            disabled={currentSlide === 0}
+          >
+            <ChevronLeft size={24} />
+          </button>
+        </div>
+        
+        {/* Slide content - center */}
+        <div className="flex-grow py-4">
+          <div className="bg-white rounded-lg shadow-lg h-full overflow-hidden">
+            {slides[currentSlide]}
+          </div>
+        </div>
+        
+        {/* Slide navigation - right side */}
+        <div className="w-14 flex items-center justify-center">
+          <button 
+            onClick={nextSlide}
+            className={`w-10 h-10 rounded-full flex items-center justify-center ${currentSlide < slides.length - 1 ? 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200' : 'bg-gray-100 text-gray-400 cursor-not-allowed'}`}
+            disabled={currentSlide === slides.length - 1}
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+      </div>
+      
+      {/* Footer with thumbnails */}
+      <div className="bg-white shadow-md p-2 flex justify-center space-x-1 overflow-x-auto">
+        {slides.map((_, index) => (
+          <button 
+            key={index} 
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-indigo-600' : 'bg-gray-300 hover:bg-indigo-300'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Presentacion;
